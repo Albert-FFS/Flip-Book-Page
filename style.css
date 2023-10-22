@@ -1,0 +1,173 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  background: #6595fb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.book {
+  aspect-ratio: 16/9;
+  width: 700px;
+  /* height: 400px; */
+  /* background: black; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* overflow: hidden; */
+  position: relative;
+  perspective: 7000px;
+  perspective-origin: center left;
+}
+.sheet-cover,
+.sheet,
+.sheet-spine {
+  aspect-ratio: 8/9;
+  width: 50%;
+  position: absolute;
+  transition:linear 1s;
+  -webkit-transition:linear 1s;
+  -moz-transition:linear 1s;
+  -ms-transition:linear 1s;
+  -o-transition:linear 1s;
+  right: 0;
+}
+.sheet-cover.up,
+.sheet.up,
+.sheet-spine.up {
+  transform: translateX(0%) rotateY(0deg);
+  -webkit-transform: translateX(0%) rotateY(0deg);
+  -moz-transform: translateX(0%) rotateY(0deg);
+  -ms-transform: translateX(0%) rotateY(0deg);
+  -o-transform: translateX(0%) rotateY(0deg);
+}
+.sheet-cover.down,
+.sheet.down,
+.sheet-spine.down {
+  transform: translateX(-100%) rotateY(-180deg);
+  -webkit-transform: translateX(-100%) rotateY(-180deg);
+  -moz-transform: translateX(-100%) rotateY(-180deg);
+  -ms-transform: translateX(-100%) rotateY(-180deg);
+  -o-transform: translateX(-100%) rotateY(-180deg);
+}
+.sheet-cover .cover {
+  aspect-ratio: 8/9;
+  width: 100%;
+  position: absolute;
+  background: url("./Front.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: all linear 1s;
+  -webkit-transition: all linear 1s;
+  -moz-transition: all linear 1s;
+  -ms-transition: all linear 1s;
+  -o-transition: all linear 1s;
+}
+.sheet-cover .pastdown-cover,
+.sheet-spine .pastdown-spine {
+  aspect-ratio: 8/9;
+  width: 100%;
+  position: absolute;
+  background-color: brown;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: all linear 1s;
+  -webkit-transition: all linear 1s;
+  -moz-transition: all linear 1s;
+  -ms-transition: all linear 1s;
+  -o-transition: all linear 1s;
+}
+.sheet-cover.up .cover,
+.sheet-cover.down .pastdown-cover,
+.sheet.up .page.right,
+.sheet.down .page.left,
+.sheet-spine.up .pastdown-spine,
+.sheet-spine.down .spine {
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+}
+.sheet-cover.down .cover,
+.sheet-cover.up .pastdown-cover,
+.sheet.down .page.right,
+.sheet.up .page.left,
+.sheet-spine.down .pastdown-spine,
+.sheet-spine.up .spine {
+  transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+}
+.sheet-spine {
+}
+.spine {
+  aspect-ratio: 8/9;
+  width: 100%;
+  position: absolute;
+  background: url("./Back.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: all linear 1s;
+  -webkit-transition: all linear 1s;
+  -moz-transition: all linear 1s;
+  -ms-transition: all linear 1s;
+  -o-transition: all linear 1s;
+}
+.sheet {
+}
+.page {
+  aspect-ratio: 8/9;
+  width: 100%;
+  position: absolute;
+  background: #ebd8a9;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: all linear 1s;
+  -webkit-transition: all linear 1s;
+  -moz-transition: all linear 1s;
+  -ms-transition: all linear 1s;
+  -o-transition: all linear 1s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px ;
+}
+.page.left {
+  box-shadow: inset 1px 0 20px black;
+  transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+}
+.page.left p,
+.page.left h2{
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+}
+.page.right {
+  box-shadow: inset -1px 0 20px black;
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+}
