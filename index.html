@@ -8,22 +8,19 @@
     <!-- <script src="app.js" defer></script> -->
   </head>
   <body>
+    <h1 id></h1>
     <div class="container">
       <div class="book">
-        <div class="sheet-cover up" style="z-index: 4" onclick="turn(this,4)">
-          <div class="cover"></div>
-          <div class="pastdown-cover"></div>
+        <div
+          class="sheet"
+          id="cover"
+          style="z-index: 4"
+          onclick="turn(this,4)"
+        >
+          <div class="page cover right"></div>
+          <div class="page pastdown left"></div>
         </div>
-        <div class="sheet up" style="z-index: 3" onclick="turn(this,3)">
-          <div class="page left">
-            <h2>Title 2</h2>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem,
-              similique. Repellat quaerat, esse animi pariatur nostrum excepturi
-              voluptates vitae inventore dolorum ipsa laudantium itaque dolorem
-              error porro, quae accusantium mollitia.
-            </p>
-          </div>
+        <div class="sheet" style="z-index: 3" onclick="turn(this,3)">
           <div class="page right">
             <h2>Title 1</h2>
             <p>
@@ -33,17 +30,17 @@
               ipsam. Voluptatem aperiam deserunt et ullam.
             </p>
           </div>
-        </div>
-        <div class="sheet up" style="z-index: 2" onclick="turn(this,2)">
           <div class="page left">
-            <h2>Title 4</h2>
+            <h2>Title 2</h2>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Laudantium, quisquam, dolorem harum obcaecati cumque, quos
-              delectus alias dolorum maiores iusto iure quia? Nemo, atque
-              quisquam ratione similique deleniti dolore placeat.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem,
+              similique. Repellat quaerat, esse animi pariatur nostrum excepturi
+              voluptates vitae inventore dolorum ipsa laudantium itaque dolorem
+              error porro, quae accusantium mollitia.
             </p>
           </div>
+        </div>
+        <div class="sheet" style="z-index: 2" onclick="turn(this,2)">
           <div class="page right">
             <h2>Title 3</h2>
             <p>
@@ -53,27 +50,54 @@
               natus inventore cupiditate corporis!
             </p>
           </div>
+          <div class="page left">
+            <h2>Title 4</h2>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Laudantium, quisquam, dolorem harum obcaecati cumque, quos
+              delectus alias dolorum maiores iusto iure quia? Nemo, atque
+              quisquam ratione similique deleniti dolore placeat.
+            </p>
+          </div>
         </div>
-        <div class="sheet-spine up" style="z-index: 1" onclick="turn(this,1)">
-          <div class="spine"></div>
-          <div class="pastdown-spine"></div>
+        <div
+          class="sheet"
+          id="spine"
+          style="z-index: 1"
+          onclick="turn(this,1)"
+        >
+          <div class="page pastdown right"></div>
+          <div class="page spine left"></div>
         </div>
       </div>
     </div>
     <script>
       function turn(sheet, zIndex) {
-        if (sheet.classList.contains("up")) {
-          sheet.classList.add("down");
-          sheet.classList.remove("up");
+        const spine = document.getElementById('spine');
+        sheet.classList.toggle('down');
+        if (sheet.classList.contains("down")){
           setTimeout(() => {
             sheet.style.zIndex = `-${zIndex}`;
-          },1000);
-          
-        } else {
-          sheet.classList.add("up");
-          sheet.classList.remove("down");
+          }, 1000);
+        } 
+        else{
           sheet.style.zIndex = `${zIndex}`;
         }
+        // if (sheet.classList.contains("up")) {
+        //   sheet.classList.add("down");
+        //   sheet.classList.remove("up");
+        //   setTimeout(() => {
+        //     sheet.style.zIndex = `-${zIndex}`;
+        //   }, 1000);
+        // } else {
+        //   sheet.style.zIndex = `${zIndex}`;
+        //   setTimeout(() => {
+        //     sheet.classList.add("up");
+
+        //     sheet.classList.remove("down");
+        //   }, 1000);
+        // }
+
       }
     </script>
   </body>
