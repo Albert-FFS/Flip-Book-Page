@@ -1,0 +1,30 @@
+{
+  "name": "book-framework",
+  "version": "1.0.0",
+  "description": "It is a set of tools with which you can create virtual books, with the iteration of its pages and stylization of both the book, cover, back cover, back covers and pages from ECMAScript/TypeScript code.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Albert-FFS/Book-Framework.git"
+  },
+  "keywords": [
+    "Book",
+    "Page",
+    "Novellas",
+    "Fiction-Book",
+    "Non-Fiction-Book",
+    "NewsPaper",
+    "TextBook",
+    "Comics",
+    "Manual-Book"
+  ],
+  "author": "Rafael Alberto Serrato Morales",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Albert-FFS/Book-Framework/issues"
+  },
+  "homepage": "https://github.com/Albert-FFS/Book-Framework#readme"
+}

@@ -23,7 +23,6 @@
   position: relative;
   perspective: 700px;
   perspective: center bottom;
-  background: white;
 }
 .cover {
   background: url("./Front.jpg") !important;
